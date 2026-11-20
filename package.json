@@ -1,0 +1,64 @@
+{
+  "name": "@datacircle/plugin-datacircle",
+  "version": "0.1.0",
+  "description": "An elizaOS plugin on Datacircle's open API: find the best GTM APIs. List every API and see which provider ranks first on each one. Search every provider's pricing plans. See where a provider ranks. No API key needed.",
+  "keywords": [
+    "elizaos",
+    "elizaos-plugin",
+    "eliza",
+    "plugin",
+    "agent-tools",
+    "gtm",
+    "gtm-apis",
+    "api",
+    "api-directory",
+    "api-pricing",
+    "b2b-data",
+    "data-enrichment",
+    "datacircle"
+  ],
+  "homepage": "https://datacircle.dev",
+  "bugs": {
+    "url": "https://github.com/waynehamadi/eliza-plugin-datacircle/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waynehamadi/eliza-plugin-datacircle.git"
+  },
+  "license": "MIT",
+  "author": "Datacircle <wayne@datacircle.dev> (https://datacircle.dev)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node test/live.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@elizaos/core": "^2.0.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "2.0.5",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
