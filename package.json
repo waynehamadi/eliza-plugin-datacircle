@@ -1,6 +1,6 @@
 {
   "name": "@datacircle/plugin-datacircle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An elizaOS plugin on Datacircle's open API: find the best GTM APIs. List every API and see which provider ranks first on each one. Search every provider's pricing plans. See where a provider ranks. No API key needed.",
   "keywords": [
     "elizaos",

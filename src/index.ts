@@ -65,7 +65,7 @@ const BEST_PLANS_PARAMETERS: ActionParameter[] = [
 const SEARCH_PLANS_PARAMETERS: ActionParameter[] = [
   optional('api', "Only this API's plans: its name or slug, like email-finder. A provider's name goes in query, never here. Every API when left out", { type: 'string' }),
   optional('query', "Words that must all appear in the provider's or plan's name, like bright data", { type: 'string' }, ['bright data']),
-  optional('sort', 'score (best first, the default), provider (A to Z) or price ($ per 1,000, lowest first)', { type: 'string', enum: ['score', 'provider', 'price'] }),
+  optional('sort', 'score (best first, the default), provider (A to Z) or price (the lowest perThousand first). Only these three words', { type: 'string', enum: ['score', 'provider', 'price'] }),
   optional('limit', 'How many plans to give, 1 to 50. 10 when left out', { type: 'integer', minimum: 1, maximum: 50 }),
   optional('offset', 'How many found plans to skip first. 0 when left out', { type: 'integer', minimum: 0 }),
 ];

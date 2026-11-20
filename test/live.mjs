@@ -74,7 +74,7 @@ check('provider unknown', !result.success && r.error.startsWith('no provider has
 const seen = [];
 const traced = createDatacirclePlugin({ fetch: (url, init) => (seen.push([String(url), init.headers['User-Agent']]), fetch(url, init)) });
 await run(BEST_PLANS, { slug: 'serp', limit: 1 }, traced);
-check('fetch option', seen.length === 1 && seen[0][0] === 'https://api.datacircle.dev/v1/apis/serp/best?limit=1' && seen[0][1] === 'datacircle-eliza/0.1.0', seen.flat().join(' '));
+check('fetch option', seen.length === 1 && seen[0][0] === 'https://api.datacircle.dev/v1/apis/serp/best?limit=1' && seen[0][1] === 'datacircle-eliza/0.1.1', seen.flat().join(' '));
 check('datacircleActions', datacircleActions().map((a) => a.name).join(' ') === Object.keys(actions).join(' '), 'the same four');
 
 // An aborted call stops.

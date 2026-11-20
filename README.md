@@ -26,6 +26,7 @@ The plugin works with elizaOS 2.x (`@elizaos/core` 2.0.0 and later) on Node 24.
 Add `datacirclePlugin` to the plugins of your `AgentRuntime`, next to your storage, assistant and model plugins:
 
 ```ts
+import { resolve } from 'node:path';
 import { AgentRuntime, stringToUuid } from '@elizaos/core';
 import { SQLiteDatabaseAdapter } from '@elizaos/plugin-sqlite';
 import assistantPlugin from '@elizaos/plugin-assistant';
@@ -34,7 +35,7 @@ import { datacirclePlugin } from '@datacircle/plugin-datacircle';
 
 const character = { name: 'GTM agent', bio: 'Finds the best GTM APIs for the user.' };
 const agentId = stringToUuid(character.name);
-const adapter = SQLiteDatabaseAdapter.create('./agent.db', agentId);
+const adapter = SQLiteDatabaseAdapter.create(resolve('agent.db'), agentId);
 await adapter.initialize();
 
 const runtime = new AgentRuntime({

@@ -4,7 +4,7 @@
 export const BASE_URL = 'https://api.datacircle.dev/v1';
 
 /** This package's version, sent in each call's User-Agent where the runtime lets a call set one. */
-export const VERSION = '0.1.0';
+export const VERSION = '0.1.1';
 
 /** Where the tools call. Left out, they call BASE_URL with the runtime's fetch. */
 export interface DatacircleOptions {
